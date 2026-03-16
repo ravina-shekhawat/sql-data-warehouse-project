@@ -1,6 +1,30 @@
+/*
+===============================================================================
+Prduct Report
+===============================================================================
+Purpose : 
+    - This report consolidates key product metrics and behaviors.
+Highlights:
+1. Gathers essential fields such as product name, category, subcategory , and cost of products.
+2. Segments products by revenue to identify High-Performers, Mid-Range or Low_Performers
+3. Aggregates product-level metrics:
+- total orders
+- total sales
+- total quantity sold
+- total customers
+- lifespan (in months)
+4. Calculates valuable KPIs :
+- recency (months since last sale)
+- avg order revenue 
+- avg monthly revenue
+======================================================================
+*/
+
 CREATE VIEW  gold.report_products AS 
+  
 WITH base_query AS (
 SELECT 
+/* Base query : Retrieves core columns from fact_sales and dim_products */
   f.product_key,
   f.order_number,
   f.sales_amount,
@@ -14,9 +38,10 @@ SELECT
   FROM gold.fact_sales AS f
   LEFT JOIN gold.dim_product AS p
   ON p.product_key = f.product_key
-  WHERE order_date IS NOT NULL
+  WHERE order_date IS NOT NULL -- only consider valid sales dates
 )
 , product_aggregation AS (
+  /* Product Aggregations : summarizes key metrics at the product level */
 SELECT 
   product_key,
   product_name,
@@ -37,6 +62,9 @@ SELECT
   subcategory,
   cost
 )
+/*
+Final Query : Combines all product results into one output
+  */
 SELECT
   product_key,
   product_name,

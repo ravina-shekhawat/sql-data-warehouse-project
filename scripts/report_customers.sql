@@ -1,3 +1,25 @@
+/*
+===============================================================================
+Customer Report
+===============================================================================
+Purpose : 
+    - This report consolidates key customer metrics and behaviors.
+Highlights:
+1. Gathers essential fields such as customer name, age, customer number .
+2. Segments customers by revenue to identify VIP, Regular or New
+3. Aggregates customer-level metrics:
+- total orders
+- total sales
+- total quantity 
+- total products 
+- lifespan 
+4. Calculates valuable KPIs :
+- recency (months since last sale)
+- avg_order_value 
+- avg_monthly_sales
+======================================================================
+*/
+
 CREATE VIEW gold.report_customers AS 
 WITH base_query AS (
 SELECT

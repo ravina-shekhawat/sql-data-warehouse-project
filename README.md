@@ -96,4 +96,15 @@ This project is licensed under the [MIT License](LICENSE) You are free to use, m
 
 Hi there! I'm **Ravina Shekhawat**. I'm a Aspiring Data Analyst, This is my first data project . i am very excited 
 
+## Final Note on This Project
+This project was created by following a step-by-step tutorial that i have been working on for the past 2
+ months
+ 
+ The tutorial was taught by Baraa Khatib Salkini, whose in depth explanation of SQL and date warehousing
+ concepts made it easier to understand the fundamentals and apply them practically. I highly recommend this
+ instructor to anyone who wants to learn SQL in depth.
+ 
+ While the implementation closely follows the turorial, i completed it myself to gain hands-on experience and strengthen my understanding.
+ 
+ 
 
